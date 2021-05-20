@@ -22,6 +22,8 @@ class CreateSessionsTable extends Migration
             $table->date('start_session');
             $table->date('end_session');
             $table->timestamps();
+
+            $table->engine = 'InnoDB';
         });
     }
 

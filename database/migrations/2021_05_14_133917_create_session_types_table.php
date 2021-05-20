@@ -19,6 +19,7 @@ class CreateSessionTypesTable extends Migration
             $table->timestamps();
 
             $table->unique('name', 'unique_session_type');
+            $table->engine = 'InnoDB';
         });
     }
 

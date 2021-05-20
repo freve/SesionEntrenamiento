@@ -22,6 +22,8 @@ class CreateMethodsTable extends Migration
             $table->tinyInteger('charge');
             $table->boolean('is_private');
             $table->timestamps();
+
+            $table->engine = 'InnoDB';
         });
     }
 
