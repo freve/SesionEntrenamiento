@@ -23,7 +23,7 @@ class SessionFactory extends Factory
     public function definition()
     {
         $start = (Carbon::today()->subDay(rand(0, 10)))->format('Y-m-d');
-        $end = (Carbon::today()->subDay(rand(0, 10)))->format('Y-m-d');
+        $end = (Carbon::today()->addDay(rand(0, 10)))->format('Y-m-d');
         return [
             'microcycle_id' => rand(0, 10),
             'session_type_id' => 2,
