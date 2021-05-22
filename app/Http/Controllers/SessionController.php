@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\SessionAddMethodRequest;
 use App\Http\Requests\SessionRequest;
 use App\Http\Requests\SessionUpRequest;
 use Illuminate\Http\Request;
@@ -55,7 +56,7 @@ class SessionController extends Controller
      */
     public function show($id)
     {
-        $session = \App\Models\Session::findOrFail($id);
+        $session = \App\Models\Session::findOrFail($id)->with('session_type')->first();
         return response()->json(['session' => $session], 200);
     }
 
@@ -84,10 +85,16 @@ class SessionController extends Controller
      */
     public function destroy($id)
     {
-        $session = Session::find($id);
+        $session = Session::findOrFail($id);
         $destroy = $session->delete();
         if ($destroy) {
             return response()->json(['message' => "Se ha eliminado correctamente a {$session['name']}"]);
         }
+    }
+
+    public function add_method(SessionAddMethodRequest $request, $id)
+    {
+        $validated = $request->validated();
+        return $validated;
     }
 }

@@ -25,7 +25,7 @@ class SessionFactory extends Factory
         $start = (Carbon::today()->subDay(rand(0, 10)))->format('Y-m-d');
         $end = (Carbon::today()->addDay(rand(0, 10)))->format('Y-m-d');
         return [
-            'microcycle_id' => rand(0, 10),
+            'microcycle_id' => rand(1, 10),
             'session_type_id' => 2,
             'name' => $this->faker->unique()->sentence($nbWords = 6, $variableNbWords = true),
             'info' => $this->faker->paragraph($nbSentences = rand(2, 6), $variableNbSentences = true),

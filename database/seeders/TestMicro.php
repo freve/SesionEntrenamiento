@@ -16,7 +16,7 @@ class TestMicro extends Seeder
      */
     public function run()
     {
-        SessionType::factory()->count(5)->create();
-        Session::factory()->count(10)->create();
+        SessionType::factory()->count(3)->create();
+        Session::factory()->count(6)->create();
     }
 }
