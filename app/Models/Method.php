@@ -11,7 +11,7 @@ class Method extends Model
 {
     use HasFactory;
 
-    protected $fillble = [
+    protected $fillable = [
         'name',
         'info',
         'intensity',
