@@ -29,7 +29,7 @@ Se necesita tener instalado Docker.
     ```
     Si no hiciste el paso anterior, todos los comandos lo harás de la siguiente manera: ./vendor/bin/sail up | ./vendor/bin/sail up -d
 4. Para mayor información entrar a:
-    <href ="https://laravel.com/docs/8.x/installation"> Documentación de Laravel 8</href>
+    https://laravel.com/docs/8.x/installation
 
 ### OTRAS COSAS
 
