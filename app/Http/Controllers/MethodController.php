@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Http;
 use App\Http\Requests\MethodRequest;
 use App\Http\Requests\MethodUpRequest;
 use Illuminate\Http\Request;
@@ -42,8 +43,11 @@ class MethodController extends Controller
             'is_private' => $validated['is_private'],
         ]);
         if ($method) {
+           
             return response()->json(['data' => $method, 'message' => "Se ha creado correctamente el Método de Entrenamiento: {$method['name']}"], 201);
         }
+
+      
     }
 
     /**
